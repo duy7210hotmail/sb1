@@ -13,5 +13,4 @@ if($command -eq 'dir') {
 
 vi src/main/java/com/diduy/application/$command
 
-echo "failed"
 

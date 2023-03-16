@@ -2,8 +2,12 @@ package com.diduy.Application;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 
   @Id
@@ -20,6 +24,16 @@ public class Product {
 
   private String typeOfProduct;
 
+  public Product(String _name, Double _price) {
+    this.name = _name;
+    this.price = _price;
+  }
+
+  public Product(String _name, Double _price, String _pictureUrl) {
+    this.name = _name;
+    this.price = _price;
+    this.pictureUrl = _pictureUrl;
+  }
   public void setId(Long id) {
     this.id = id;
   }
@@ -59,6 +73,5 @@ public class Product {
   public String getPictureUrl() {
     return pictureUrl;
   }
+
 }
-
-
